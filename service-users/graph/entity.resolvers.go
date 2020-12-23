@@ -5,8 +5,8 @@ package graph
 
 import (
 	"context"
-	"service-user/graph/generated"
-	"service-user/graph/model"
+	"service-users/graph/generated"
+	"service-users/graph/model"
 )
 
 func (r *entityResolver) FindUserByID(ctx context.Context, id string) (*model.User, error) {

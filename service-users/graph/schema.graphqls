@@ -4,7 +4,7 @@
 
 type User @key(fields: "id") {
   id: ID!
-  Name: String!
+  name: String!
 }
 
 type Query {

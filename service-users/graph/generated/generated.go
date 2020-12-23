@@ -7,7 +7,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"service-user/graph/model"
+	"service-users/graph/model"
 	"strconv"
 	"sync"
 	"sync/atomic"
@@ -152,7 +152,7 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.User.ID(childComplexity), true
 
-	case "User.Name":
+	case "User.name":
 		if e.complexity.User.Name == nil {
 			break
 		}
@@ -236,7 +236,7 @@ var sources = []*ast.Source{
 
 type User @key(fields: "id") {
   id: ID!
-  Name: String!
+  name: String!
 }
 
 type Query {
@@ -684,7 +684,7 @@ func (ec *executionContext) _User_id(ctx context.Context, field graphql.Collecte
 	return ec.marshalNID2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) _User_Name(ctx context.Context, field graphql.CollectedField, obj *model.User) (ret graphql.Marshaler) {
+func (ec *executionContext) _User_name(ctx context.Context, field graphql.CollectedField, obj *model.User) (ret graphql.Marshaler) {
 	defer func() {
 		if r := recover(); r != nil {
 			ec.Error(ctx, ec.Recover(ctx, r))
@@ -2038,8 +2038,8 @@ func (ec *executionContext) _User(ctx context.Context, sel ast.SelectionSet, obj
 			if out.Values[i] == graphql.Null {
 				invalids++
 			}
-		case "Name":
-			out.Values[i] = ec._User_Name(ctx, field, obj)
+		case "name":
+			out.Values[i] = ec._User_name(ctx, field, obj)
 			if out.Values[i] == graphql.Null {
 				invalids++
 			}

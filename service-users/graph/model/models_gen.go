@@ -8,7 +8,7 @@ type NewUser struct {
 
 type User struct {
 	ID   string `json:"id"`
-	Name string `json:"Name"`
+	Name string `json:"name"`
 }
 
 func (User) IsEntity() {}

@@ -6,8 +6,8 @@ package graph
 import (
 	"context"
 	"fmt"
-	"service-user/graph/generated"
-	"service-user/graph/model"
+	"service-users/graph/generated"
+	"service-users/graph/model"
 )
 
 func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) (*model.User, error) {
