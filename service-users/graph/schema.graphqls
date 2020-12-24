@@ -1,12 +1,8 @@
-# GraphQL schema example
-#
-# https://gqlgen.com/getting-started/
+extend type Query {
+  me: User
+}
 
 type User @key(fields: "id") {
   id: ID!
   name: String!
-}
-
-extend type Query {
-  user: User
 }

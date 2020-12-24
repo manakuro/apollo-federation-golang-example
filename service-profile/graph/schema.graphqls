@@ -1,0 +1,11 @@
+type Profile {
+  userId: String!
+  age: String!
+  phone: String!
+  job: String!
+}
+
+extend type User @key(fields: "id") {
+  id: ID! @external
+  profile: Profile!
+}
