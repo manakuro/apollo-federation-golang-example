@@ -7,14 +7,6 @@ type User @key(fields: "id") {
   name: String!
 }
 
-type Query {
+extend type Query {
   user: User
-}
-
-input NewUser {
-  name: String!
-}
-
-type Mutation {
-  createUser(input: NewUser!): User!
 }
