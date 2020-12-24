@@ -9,9 +9,9 @@ import (
 	"service-users/graph/model"
 )
 
-func (r *queryResolver) Me(ctx context.Context) (*model.User, error) {
+func (r *queryResolver) User(ctx context.Context) (*model.User, error) {
 	return &model.User{
-		ID: "1",
+		ID:   "1",
 		Name: "Tom",
 	}, nil
 }
