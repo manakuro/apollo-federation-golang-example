@@ -5,6 +5,9 @@
     "graphql": "^15.4.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node -r dotenv/config index.js"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }

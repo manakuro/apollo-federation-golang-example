@@ -1,12 +1,7 @@
 const { ApolloServer } = require('apollo-server');
 const { ApolloGateway } = require("@apollo/gateway");
 
-const gateway = new ApolloGateway({
-  serviceList: [
-    { name: 'users', url: 'http://localhost:4001/query' },
-    { name: 'profile', url: 'http://localhost:4002/query' },
-  ],
-});
+const gateway = new ApolloGateway();
 
 const server = new ApolloServer({
   gateway,
